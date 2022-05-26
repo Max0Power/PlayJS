@@ -70,8 +70,10 @@ let img_vel = {x: RandomVel(), y: RandomVel()};
 // animation loop:
 let delta = 0.0;
 let lastRender = 0;
-function editor_loop(timestamp) {
-requestAnimationFrame(editor_loop);
+function loop(timestamp) {
+  // request animation frame:
+  requestAnimationFrame(loop);
+  // calculate delta time in seconds from previous frame:
   if (timestamp === undefined) { timestamp = 0.0; lastRender = 0.0; }
   delta = (timestamp - lastRender) * 0.001;
   lastRender = timestamp;
@@ -91,7 +93,7 @@ requestAnimationFrame(editor_loop);
   // draw image to canvas:
   ctx.drawImage(img, img_pos.x, img_pos.y, img.width, img.height);
 }
-editor_loop(0);
+loop(0);
 
 // help function used to randomize animated image velocity:
 function RandomVel() {return 0.2 + Math.random() * 0.4;}
