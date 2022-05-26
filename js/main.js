@@ -70,6 +70,7 @@ window.onload = function() {
 }
 
 
+// moves vertical bar and resize containers
 function _PJS_HandleDrag(x) {
     if (x < 0) x = 0;
     if (x > window.innerWidth - _PJS_V_BAR.clientWidth) x = window.innerWidth - _PJS_V_BAR.clientWidth;
@@ -81,6 +82,7 @@ function _PJS_HandleDrag(x) {
 }
 
 
+// runs the code that is written to codearea
 function _PJS_EditorRunCode() {
     window.eval(_PJS_CODE_MIRROR_EDITOR.getValue()); 
 }
