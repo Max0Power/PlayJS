@@ -13,16 +13,14 @@
 		<script src="js/main.js"></script>
 		<style>
 			html, body { width:  100%; height: 100%; margin: 0; padding: 0; background-color: #0f0f0f; color: white; font-family: Arial; }
-			.pjs_style_container_l {width:calc(50% - 4px); height: 100%; margin: 0; padding: 0; overflow: hidden; float:left; }
-			.pjs_style_container_r {width: calc(50% - 4px); height: 100%; margin: 0px; padding: 0; overflow: hidden; float: right;}
-			.pjs_style_v_bar {width:8px; height:100%; background-color: #606060; position: fixed; left:calc(50% - 4px); margin: 0;}
+			.pjs_style_container_l {width:calc(50% - 8px); height: 100%; margin: 0; padding: 0; overflow: hidden; float:left; }
+			.pjs_style_container_r {width: calc(50% - 8px); height: 100%; margin: 0px; padding: 0; overflow: hidden; float: right;}
+			.pjs_style_v_bar {width:16px; height:100%; background-color: #606060; position: fixed; left:calc(50% - 4px); margin: 0;}
 			.pjs_style_v_bar:hover { background-color: #a0a0a0; cursor:ew-resize; }
 			.pjs_style_v_bar:active { background-color: #a0a0a0; cursor:col-resize; }
 			.pjs_style_codearea { resize: none; width: 100%; height: 100%; margin: 10 0 0 0; padding: 0; display: block; border: 0; background-color: #2f2f2f; color: white; font-size: 16px; }
-			.pjs_style_run_btn {background-color: #00a000; user-select: none; font-size:16px;}
-			.pjs_style_run_btn:hover {background-color: #00c000; cursor:pointer; font-size:18px;}
-			.pjs_style_copy_btn {background-color: #67B7D1; user-select: none; font-size:16px; color:black;}
-			.pjs_style_copy_btn:hover {background-color: #ADD8E6; cursor:pointer; font-size:18px; color:black;}
+			.pjs_style_run_btn {background-color: #00a000; user-select: none; font-size:24px;}
+			.pjs_style_run_btn:hover {background-color: #00c000; cursor:pointer; font-size:32px;}
 			.CodeMirror {width:100%; height:100%;}
 			.CodeMirror-scrollbar-filler {background-color: #0000002f;}
 		</style>
@@ -31,12 +29,11 @@
 	<body>
 		<div id='pjs_id_v_bar' class='pjs_style_v_bar'></div>
 		<div id ='pjs_id_container_l' class='pjs_style_container_l'>
-			<div style='background-color: #404040; width:calc(100% - 280px); height:36px; margin:0; padding:0; display:inline-block; float:left; line-height:36px; text-align:center; font-weight: bold; white-space:nowrap; font-size:24px;'>Play JS</div>
-			<div style='width:280px; height:36px; margin:0; padding:0; display:block; float:right; line-height:36px; text-align:center; font-weight: bold;'>
-				<span class='pjs_style_run_btn'  style='display:inline-block; float:right; width:140px; height:36px;' onclick='_PJS_EditorRunCode()'>RUN</span>
-				<span class='pjs_style_copy_btn'  style='display:inline-block; float:right; width:140px; height:36px;' onclick='_PJS_CopyToURL()'>COPY TO URL</span>
+			<div style='background-color: #404040; width:calc(100% - 140px); height:64px; margin:0; padding:0; display:inline-block; float:left; line-height:64px; text-align:center; font-weight: bold; white-space:nowrap; font-size:42px;'>Play JS</div>
+			<div style='width:140px; height:64px; margin:0; padding:0; display:block; float:right; line-height:64px; text-align:center; font-weight: bold;'>
+				<span class='pjs_style_run_btn'  style='display:inline-block; float:right; width:140px; height:64px;' onclick='_PJS_EditorRunCode()'>RUN</span>
 			</div>
-			<div style='width: 100%; height: calc(100% - 36px); margin: 0; padding:0;'>
+			<div style='width: 100%; height: calc(100% - 64px); margin: 0; padding:0;'>
 				<textarea class='pjs_style_codearea' id='pjs_id_codearea' wrap='off'>
 // get container that is next to this codearea:
 let container = document.getElementById('container');

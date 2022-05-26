@@ -21,13 +21,6 @@ window.onload = function() {
         mode:  "javascript",
         theme: 'monokai'
     });
-
-    // look if url contains parameter for codeinput:
-    let url = new URL(window.location.href);
-    let url_text = url.searchParams.get("code");
-    if (url_text != null) {
-        _PJS_CODE_MIRROR_EDITOR.setValue(url_text.toString());
-    }
     
     // v-bar drag event by mouse:
     let drag_mouse = false;
@@ -90,15 +83,4 @@ function _PJS_HandleDrag(x) {
 
 function _PJS_EditorRunCode() {
     window.eval(_PJS_CODE_MIRROR_EDITOR.getValue()); 
-}
-
-
-function _PJS_CopyToURL() {
-    /*
-    // commented will copy url link to clipboard, function changed to replace current window url...
-    _PJS_CODEAREA.select();
-    _PJS_CODEAREA.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(window.location.href.split('?')[0]+ '?text=' + encodeURIComponent(_PJS_CODE_MIRROR_EDITOR.getValue()));
-    */
-    history.replaceState({id: 'Play JS', source: 'web'}, 'Play JS', window.location.href.split('?')[0]+ '?code=' + encodeURIComponent(_PJS_CODE_MIRROR_EDITOR.getValue()));
 }
